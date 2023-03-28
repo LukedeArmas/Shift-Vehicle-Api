@@ -5,7 +5,7 @@ export const shiftData = [
     vehicles: [],
     location: {
       type: "Point",
-      coordinates: [40.712776, -74.005974]
+      coordinates: [-74.005974, 40.712776]
     },
     start_time: new Date().toISOString(),
     end_time: new Date(new Date().setHours(new Date().getHours() + 2)).toISOString(),
@@ -16,7 +16,7 @@ export const shiftData = [
     vehicles: [],
     location: {
       type: 'Point',
-      coordinates: [40.712776, -74.712776],
+      coordinates: [-74.712776, 40.712776],
     },
     start_time: new Date().toISOString(),
     end_time: new Date(new Date().setHours(new Date().getHours() + 3)).toISOString(),
@@ -27,7 +27,7 @@ export const shiftData = [
     vehicles: [],
     location: {
       type: 'Point',
-      coordinates: [40.712776, -74.712776],
+      coordinates: [-74.712776, 40.712776],
     },
     start_time: new Date().toISOString(),
     end_time: new Date(new Date().setHours(new Date().getHours() + 4)).toISOString(),
@@ -38,7 +38,7 @@ export const shiftData = [
     vehicles: ['6422a72e74228ccb9d7ae092'],
     location: {
       type: 'Point',
-      coordinates: [40.712776, -74.712776],
+      coordinates: [-74.712776, 40.712776],
     },
     start_time: new Date(new Date().setHours(new Date().getHours() - 3)).toISOString(),
     end_time: new Date(new Date().setHours(new Date().getHours() + 3)).toISOString(),
@@ -49,7 +49,7 @@ export const shiftData = [
     vehicles: ['6422a8b53d094083edda3480', '6422a8ebf6b65eb304d268c9'],
     location: {
       type: 'Point',
-      coordinates: [40.712776, -74.712776],
+      coordinates: [-74.712776, 40.712776],
     },
     start_time: new Date(new Date().setHours(new Date().getHours() - 3)).toISOString(),
     end_time: new Date(new Date().setHours(new Date().getHours() + 3)).toISOString(),
@@ -60,7 +60,7 @@ export const shiftData = [
     vehicles: ['6422a8b53d094083edda3480', '6422a8ebf6b65eb304d268c9', '6422a72e74228ccb9d7ae092'],
     location: {
       type: 'Point',
-      coordinates: [40.712776, -74.712776],
+      coordinates: [-74.712776, 40.712776],
     },
     start_time: new Date(new Date().setHours(new Date().getHours() - 3)).toISOString(),
     end_time: new Date(new Date().setHours(new Date().getHours() + 3)).toISOString(),
@@ -71,7 +71,7 @@ export const shiftData = [
     vehicles: ['6422a72e74228ccb9d7ae092', '6422a75cd7e61c744bad58ee'],
     location: {
       type: 'Point',
-      coordinates: [40.712776, -74.712776],
+      coordinates: [-74.712776, 40.712776],
     },
     start_time: new Date(new Date().setHours(new Date().getHours() - 3)).toISOString(),
     end_time: new Date(new Date().setHours(new Date().getHours() + 3)).toISOString(),

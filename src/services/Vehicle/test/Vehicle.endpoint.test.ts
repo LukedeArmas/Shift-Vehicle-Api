@@ -14,7 +14,7 @@ import type { MongoMemoryServer } from 'mongodb-memory-server';
 chai.use(chaiHttp);
 const { expect, request } = chai;
 
-describe('vehicles', () => {
+describe('vehicles endpoint tests', () => {
   const app: Express = createServer();
   let httpServer;
   let dbConnection: Connection;

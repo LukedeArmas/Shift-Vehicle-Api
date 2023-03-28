@@ -12,12 +12,11 @@ import type { Connection } from 'mongoose';
 import type { MongoMemoryServer } from 'mongodb-memory-server';
 import { IMongooseVehicleModel, IVehicle } from 'services/Vehicle/Vehicle'
 import { vehicleData } from '../../Vehicle/test/vehicleData'
-import { VehicleModel } from '../../../enums/vehicleModel'
 
 chai.use(chaiHttp);
 const { expect, request } = chai;
 
-describe('shifts', () => {
+describe('shifts endpoint tests', () => {
   const app: Express = createServer();
   let httpServer;
   let dbConnection: Connection;
@@ -83,7 +82,8 @@ describe('shifts', () => {
       const shift = await Shift.findById(resultShift._id);
       expect(shift).to.exist;
       expect(shift.employeeId).to.be.equal(shiftData.employeeId);
-      expect(shift.location.coordinates[0]).to.be.equal(shiftData.lat);
+      expect(shift.location.coordinates[1]).to.be.equal(shiftData.lat);
+      expect(shift.location.coordinates[0]).to.be.equal(shiftData.long);
     });
   });
 
@@ -273,7 +273,7 @@ describe('shifts', () => {
     });
   });
 
-  describe.only('POST /api/shifts/auto_creation', async () => {
+  describe('POST /api/shifts/auto_creation', async () => {
     it('Should auto create shift', async () => {
       const shiftData = {
         employeeId: '7a040e05-5ca1-4f78-bbbc-8c851450aa0f',
@@ -297,7 +297,8 @@ describe('shifts', () => {
       expect(shift).to.exist;
       expect(shift.vehicles.length).to.be.equal(20);
       expect(shift.employeeId).to.be.equal(shiftData.employeeId);
-      expect(shift.location.coordinates[0]).to.be.equal(shiftData.lat);
+      expect(shift.location.coordinates[1]).to.be.equal(shiftData.lat);
+      expect(shift.location.coordinates[0]).to.be.equal(shiftData.long);
     });
   });
 });

@@ -35,11 +35,11 @@ export class VehicleRepo {
      $geoNear: {
         near: { 
           type: "Point",
-          coordinates: [ lat , long]
+          coordinates: [long, lat]
         },
         distanceField: "dist.calculated",
         maxDistance,
-        spherical: true
+        spherical: false,
      }
    }, 
    {

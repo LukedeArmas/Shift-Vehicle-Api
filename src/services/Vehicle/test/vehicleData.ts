@@ -10,7 +10,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.680245, -73.996955],
+            coordinates: [-73.996955, 40.680245],
         },
     },
     {
@@ -21,7 +21,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.684978, -73.998965],
+            coordinates: [-73.998965, 40.684978],
         },
     },
     {
@@ -32,7 +32,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.683574, -73.990715],
+            coordinates: [-73.990715, 40.683574 ],
         },
     },
     {
@@ -43,7 +43,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.67942, -73.983841],
+            coordinates:  [-73.983841, 40.67942],
         },
     },
     {
@@ -54,7 +54,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.676695, -73.988838],
+            coordinates: [-73.988838, 40.676695],
         },
     },
     {
@@ -65,7 +65,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.675496, -73.99468],
+            coordinates: [-73.99468, 40.675496],
         },
     },
     {
@@ -76,7 +76,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.678274, -74.001642],
+            coordinates: [-74.001642, 40.678274],
         },
     },
     {
@@ -87,7 +87,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.678434, -73.997158],
+            coordinates: [-73.997158, 40.678434],
         },
     },
     {
@@ -98,7 +98,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.683456, -74.002047],
+            coordinates: [-74.002047, 40.683456],
         },
     },
     {
@@ -109,7 +109,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.677941, -73.982731],
+            coordinates: [-73.982731, 40.677941],
         },
     },
     {
@@ -120,7 +120,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.673533, -73.981992],
+            coordinates: [-73.981992, 40.673533],
         },
     },
     {
@@ -131,7 +131,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.668346, -73.976115],
+            coordinates: [-73.976115, 40.668346],
         },
     },
     {
@@ -142,7 +142,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.669861, -73.989846],
+            coordinates: [-73.989846, 40.669861],
         },
     },
     {
@@ -153,7 +153,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.673568, -74.000575],
+            coordinates: [-74.000575, 40.673568],
         },
     },
     {
@@ -164,7 +164,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.676001, -73.987382],
+            coordinates: [-73.987382, 40.676001],
         },
     },
     {
@@ -177,7 +177,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.680245, -73.996955],
+            coordinates: [-73.996955, 40.680245],
         },
     },
     {
@@ -189,7 +189,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.680245, -73.996955],
+            coordinates: [-73.996955, 40.680245],
         },
     },
     {
@@ -201,7 +201,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.680245, -73.996955],
+            coordinates: [-73.996955, 40.680245],
         },
     },
     {
@@ -213,7 +213,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.680245, -73.996955],
+            coordinates: [-73.996955, 40.680245],
         },
     },
     {
@@ -225,7 +225,7 @@ export const vehicleData = [
         model: VehicleModel.NIU,
         location: {
             type: 'Point',
-            coordinates: [ 40.680245, -73.996955],
+            coordinates: [-73.996955, 40.680245],
         },
     }
 

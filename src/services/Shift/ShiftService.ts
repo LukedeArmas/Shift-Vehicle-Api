@@ -27,7 +27,7 @@ export class ShiftService {
       ...otherShiftData,
       location: {
         type: 'Point',
-        coordinates: [lat, long],
+        coordinates: [long, lat],
       },
     };
     return alteredShiftData;
