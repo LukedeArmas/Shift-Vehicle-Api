@@ -1,0 +1,13 @@
+{
+  "spec": "src/**/*.test.ts",
+  "bail": true,
+  "diff": true,
+  "exit": true,
+  "extension": ["ts"],
+  "require": "ts-node/register",
+  "package": "./package.json",
+  "recursive": true,
+  "slow": "75",
+  "timeout": "2000",
+  "ignore": ["node_modules", "dist", ".vscode"]
+}

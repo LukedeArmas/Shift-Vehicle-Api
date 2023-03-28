@@ -1,0 +1,49 @@
+{
+  "name": "revel-take-home",
+  "version": "0.0.0",
+  "description": "Take home revel api",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
+    "start": "npm run build && ts-node dist/index.js",
+    "setup-db": "node sqlite-database/setup.js",
+    "test": "cross-env NODE_ENV=test mocha"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.15.10",
+    "auto-bind": "^4.0.0",
+    "body-parser": "^1.19.0",
+    "chai-http": "^4.3.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.17.1",
+    "injection-js": "^2.4.0",
+    "mocha": "^10.2.0",
+    "mongodb": "^5.1.0",
+    "mongoose": "^7.0.3",
+    "rsdi": "^2.3.0",
+    "sequelize": "^6.3.3",
+    "sqlite3": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/expect": "^24.3.0",
+    "@types/mocha": "^10.0.1",
+    "@types/sinon": "^10.0.13",
+    "chai": "^4.3.7",
+    "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
+    "mongodb-memory-server": "^8.12.1",
+    "nodemon": "^2.0.22",
+    "sinon": "^15.0.3"
+  }
+}
