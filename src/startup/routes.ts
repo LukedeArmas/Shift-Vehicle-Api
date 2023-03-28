@@ -28,5 +28,9 @@ export default function configure(app: Express, injector: IDIContainer) {
   // query shift to see if all vehicles in the shift have had their battery swaps
   app.get(`/api/shifts/:id/check_all_battery_swaps_completed`, shiftCtrl.checkAllBatterySwapsCompletedInShift);
 
+  // automatic shift creation
+  app.post(`/api/shifts/auto_creation`, shiftCtrl.autoCreation);
+
+
 
 }

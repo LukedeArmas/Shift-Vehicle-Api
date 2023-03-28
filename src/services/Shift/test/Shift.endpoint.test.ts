@@ -83,7 +83,7 @@ describe('shifts', () => {
       const shift = await Shift.findById(resultShift._id);
       expect(shift).to.exist;
       expect(shift.employeeId).to.be.equal(shiftData.employeeId);
-      expect(shift.lat).to.be.equal(shiftData.lat);
+      expect(shift.location.coordinates[0]).to.be.equal(shiftData.lat);
     });
   });
 
@@ -270,6 +270,34 @@ describe('shifts', () => {
       expect(res.status).to.be.equal(200);
       const { result } = res.body;
       expect(result).to.be.true;
+    });
+  });
+
+  describe.only('POST /api/shifts/auto_creation', async () => {
+    it('Should auto create shift', async () => {
+      const shiftData = {
+        employeeId: '7a040e05-5ca1-4f78-bbbc-8c851450aa0f',
+        lat: 40.712776,
+        long: -74.005974,
+        start_time: new Date().toISOString(),
+        end_time: new Date(new Date().setHours(new Date().getHours() + 1)).toISOString(),
+      }
+
+      const res = await request(app)
+          .post(`${route}/auto_creation`)
+          .send({ shiftData });
+
+      expect(res.status).to.be.equal(201);
+
+      const { success, data: resultShift } = res.body;
+      expect(success).to.be.true;
+      
+      // Confirm shift is created in db
+      const shift = await Shift.findById(resultShift._id);
+      expect(shift).to.exist;
+      expect(shift.vehicles.length).to.be.equal(20);
+      expect(shift.employeeId).to.be.equal(shiftData.employeeId);
+      expect(shift.location.coordinates[0]).to.be.equal(shiftData.lat);
     });
   });
 });

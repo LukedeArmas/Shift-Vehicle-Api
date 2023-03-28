@@ -8,8 +8,10 @@ export const vehicleData = [
         battery_level: 90,
         in_use: true,
         model: VehicleModel.NIU,
-        lat: 40.680245,
-        long: -73.996955,
+        location: {
+            type: 'Point',
+            coordinates: [ 40.680245, -73.996955],
+        },
     },
     {
         _id: '64225b79cb285ace75c810f9',
@@ -17,8 +19,10 @@ export const vehicleData = [
         battery_level: 9,
         in_use: false,
         model: VehicleModel.NIU,
-        lat: 40.684978,
-        long: -73.998965
+        location: {
+            type: 'Point',
+            coordinates: [ 40.684978, -73.998965],
+        },
     },
     {
         _id: '64225b79cb285ace75c810fa',
@@ -26,8 +30,10 @@ export const vehicleData = [
         battery_level: 65,
         in_use: false,
         model: VehicleModel.NIU,
-        lat: 40.683574,
-        long: -73.990715
+        location: {
+            type: 'Point',
+            coordinates: [ 40.683574, -73.990715],
+        },
     },
     {
         _id: '64225b79cb285ace75c810fb',
@@ -35,8 +41,10 @@ export const vehicleData = [
         battery_level: 34,
         in_use: false,
         model: VehicleModel.NIU,
-        lat: 40.67942,
-        long: -73.983841
+        location: {
+            type: 'Point',
+            coordinates: [ 40.67942, -73.983841],
+        },
     },
     {
         _id: '64225b79cb285ace75c810fc',
@@ -44,8 +52,10 @@ export const vehicleData = [
         battery_level: 20,
         in_use: false,
         model: VehicleModel.NIU,
-        lat: 40.676695,
-        long: -73.988838
+        location: {
+            type: 'Point',
+            coordinates: [ 40.676695, -73.988838],
+        },
     },
     {
         _id: '64225b79cb285ace75c810fd',
@@ -53,8 +63,10 @@ export const vehicleData = [
         battery_level: 15,
         in_use: false,
         model: VehicleModel.NIU,
-        lat: 40.675496,
-        long: -73.99468
+        location: {
+            type: 'Point',
+            coordinates: [ 40.675496, -73.99468],
+        },
     },
     {
         _id: '64225b79cb285ace75c810fe',
@@ -62,8 +74,10 @@ export const vehicleData = [
         battery_level: 90,
         in_use: false,
         model: VehicleModel.NIU,
-        lat: 40.678274,
-        long: -74.001642
+        location: {
+            type: 'Point',
+            coordinates: [ 40.678274, -74.001642],
+        },
     },
     {
         _id: '64225b79cb285ace75c810ff',
@@ -71,8 +85,10 @@ export const vehicleData = [
         battery_level: 9,
         in_use: false,
         model: VehicleModel.NIU,
-        lat: 40.678434,
-        long: -73.997158
+        location: {
+            type: 'Point',
+            coordinates: [ 40.678434, -73.997158],
+        },
     },
     {
         _id: '64225b79cb285ace75c81100',
@@ -80,8 +96,10 @@ export const vehicleData = [
         battery_level: 90,
         in_use: false,
         model: VehicleModel.NIU,
-        lat: 40.683456,
-        long: -74.002047
+        location: {
+            type: 'Point',
+            coordinates: [ 40.683456, -74.002047],
+        },
     },
     {
         _id: '64225b79cb285ace75c81101',
@@ -89,8 +107,10 @@ export const vehicleData = [
         battery_level: 22,
         in_use: true,
         model: VehicleModel.NIU,
-        lat: 40.677941,
-        long: -73.982731
+        location: {
+            type: 'Point',
+            coordinates: [ 40.677941, -73.982731],
+        },
     },
     {
         _id: '64225b79cb285ace75c81102',
@@ -98,8 +118,10 @@ export const vehicleData = [
         battery_level: 76,
         in_use: false,
         model: VehicleModel.NIU,
-        lat: 40.673533,
-        long: -73.981992
+        location: {
+            type: 'Point',
+            coordinates: [ 40.673533, -73.981992],
+        },
     },
     {
         _id: '64225b79cb285ace75c81103',
@@ -107,8 +129,10 @@ export const vehicleData = [
         battery_level: 90,
         in_use: false,
         model: VehicleModel.NIU,
-        lat: 40.668346,
-        long: -73.976115
+        location: {
+            type: 'Point',
+            coordinates: [ 40.668346, -73.976115],
+        },
     },
     {
         _id: '64225b79cb285ace75c81104',
@@ -116,8 +140,10 @@ export const vehicleData = [
         battery_level: 2,
         in_use: false,
         model: VehicleModel.NIU,
-        lat: 40.669861,
-        long: -73.989846
+        location: {
+            type: 'Point',
+            coordinates: [ 40.669861, -73.989846],
+        },
     },
     {
         _id: '64225b79cb285ace75c81105',
@@ -125,8 +151,10 @@ export const vehicleData = [
         battery_level: 13,
         in_use: false,
         model: VehicleModel.NIU,
-        lat: 40.673568,
-        long: -74.000575
+        location: {
+            type: 'Point',
+            coordinates: [ 40.673568, -74.000575],
+        },
     },
     {
         _id: '64225b79cb285ace75c81106',
@@ -134,8 +162,10 @@ export const vehicleData = [
         battery_level: 17,
         in_use: false,
         model: VehicleModel.NIU,
-        lat: 40.676001,
-        long: -73.987382
+        location: {
+            type: 'Point',
+            coordinates: [ 40.676001, -73.987382],
+        },
     },
     {
         _id: '6422a72e74228ccb9d7ae092',
@@ -145,8 +175,10 @@ export const vehicleData = [
         recent_battery_swap_time: new Date().toISOString(),
         in_use: true,
         model: VehicleModel.NIU,
-        lat: 40.680245,
-        long: -73.996955,
+        location: {
+            type: 'Point',
+            coordinates: [ 40.680245, -73.996955],
+        },
     },
     {
         _id: '6422a75cd7e61c744bad58ee',
@@ -155,8 +187,10 @@ export const vehicleData = [
         recent_battery_swap_time: new Date().toISOString(),
         in_use: true,
         model: VehicleModel.NIU,
-        lat: 40.680245,
-        long: -73.996955,
+        location: {
+            type: 'Point',
+            coordinates: [ 40.680245, -73.996955],
+        },
     },
     {
         _id: '6422a798015d8476eee65206',
@@ -165,8 +199,10 @@ export const vehicleData = [
         recent_battery_swap_time: new Date().toISOString(),
         in_use: true,
         model: VehicleModel.NIU,
-        lat: 40.680245,
-        long: -73.996955,
+        location: {
+            type: 'Point',
+            coordinates: [ 40.680245, -73.996955],
+        },
     },
     {
         _id: '6422a8b53d094083edda3480',
@@ -175,8 +211,10 @@ export const vehicleData = [
         recent_battery_swap_time: new Date(new Date().setHours(new Date().getHours() - 6)).toISOString(),
         in_use: true,
         model: VehicleModel.NIU,
-        lat: 40.680245,
-        long: -73.996955,
+        location: {
+            type: 'Point',
+            coordinates: [ 40.680245, -73.996955],
+        },
     },
     {
         _id: '6422a8ebf6b65eb304d268c9',
@@ -185,8 +223,10 @@ export const vehicleData = [
         recent_battery_swap_time: new Date(new Date().setHours(new Date().getHours() - 7)).toISOString(),
         in_use: true,
         model: VehicleModel.NIU,
-        lat: 40.680245,
-        long: -73.996955,
+        location: {
+            type: 'Point',
+            coordinates: [ 40.680245, -73.996955],
+        },
     }
 
 ];

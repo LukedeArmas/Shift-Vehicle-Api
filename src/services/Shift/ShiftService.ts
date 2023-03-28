@@ -4,6 +4,8 @@ import { VehicleService } from 'services/Vehicle/VehicleService'
 import CustomError from '../../utils/CustomError'
 import { IShift } from './Shift';
 import type { ShiftRepo } from './ShiftRepo';
+import * as utils from '../../utils/utils';
+import { IAutoCreateShift, ICreateShift } from './interfaces'
 
 export class ShiftService {
   public findAll: () => Promise<IShift[]>;
@@ -18,15 +20,23 @@ export class ShiftService {
     this.findById = shiftRepo.findById;
   }
 
+  private convertShiftLatLongToCoords(shiftData: ICreateShift | IAutoCreateShift): Partial<IShift> {
+    const { lat, long, ...otherShiftData } = shiftData
+    // Convert lat and long to fit schema
+    const alteredShiftData = {
+      ...otherShiftData,
+      location: {
+        type: 'Point',
+        coordinates: [lat, long],
+      },
+    };
+    return alteredShiftData;
+  }
 
-  public async create (shiftData: IShift): Promise<IShift> {
-    const { shiftRepo } = this;
-    // business logic goes here
+  public async create (shiftData: ICreateShift): Promise<IShift> {
+    const { shiftRepo, convertShiftLatLongToCoords } = this;
 
-  
-    const createdShift = await shiftRepo.create(shiftData);
-
-    return createdShift;
+    return shiftRepo.create(convertShiftLatLongToCoords(shiftData));
   }
 
   public async addVehiclesToShift (shiftId: string, vehicleIds: string[]): Promise<IShift> {
@@ -72,5 +82,22 @@ export class ShiftService {
     const swappedVehicles = await checkVehiclesWithBatterySwapCompletedInShift(shiftId);
 
     return vehiclesInShift.length === swappedVehicles.length;
+  }
+
+  public async autoCreation (shiftData: IAutoCreateShift): Promise<IShift> {
+    const { shiftRepo, convertShiftLatLongToCoords, vehicleService } = this;
+    const { lat, long } = shiftData;
+
+    const alteredShiftData = convertShiftLatLongToCoords(shiftData);
+
+    // Logic would go here to check if lat and long are valid for Revel locations
+
+    // Also logic to add an employee to the shift based on schedule or availability
+
+    // Get closest 20 vehicles in order
+    const closestVehicles = await vehicleService.getClosestVehiclesToPoint(lat, long, {});
+    const closestVehicleIds = closestVehicles.map(vh => vh?._id);
+
+    return shiftRepo.create({ ...alteredShiftData, vehicles: closestVehicleIds })
   }
 }

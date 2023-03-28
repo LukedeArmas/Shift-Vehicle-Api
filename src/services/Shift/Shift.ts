@@ -5,10 +5,12 @@ import { IVehicle } from 'services/Vehicle/Vehicle'
 
 export interface IShift extends Document {
     _id: string | ObjectId;
-    employeeId: string;
+    employeeId?: string;
     vehicles: IVehicle[];
-    lat: Number;
-    long: Number;
+    location: {
+        type: string,
+        coordinates: number[],
+    },
     start_time: Date;
     end_time: Date;
 }
@@ -19,20 +21,16 @@ const shiftSchema = new Schema({
   // Normally this would reference an employee db entity
     employeeId: {
         type: String,
-        required: true
+        required: false,
     },
     vehicles: [{
         type: Schema.Types.ObjectId, 
         ref: 'Vehicle',
         required: true,
     }],
-    lat: {
-        type: Number,
-        required: true,
-    },
-    long: {
-        type: Number,
-        required: true,
+    location: {
+        type: { type: String },
+        coordinates: [Number],
     },
     start_time: {
         type: Date,

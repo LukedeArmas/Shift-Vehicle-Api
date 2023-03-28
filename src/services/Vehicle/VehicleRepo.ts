@@ -25,4 +25,28 @@ export class VehicleRepo {
   public async update (id: string, body: Partial<IVehicle>): Promise<IVehicle> {
     return this.Vehicle.findByIdAndUpdate(id, body, { new: true }).lean();
   }
+
+  public async getClosestVehiclesToPoint (lat: number, long: number, options: { maxDistance?: number, limit?: number }): Promise<any> {
+    const { Vehicle } = this;
+    // 200 miles in meters
+    const { maxDistance = 321869, limit = 20 } = options;
+    const vehicles: IVehicle[] = await Vehicle.aggregate([
+   {
+     $geoNear: {
+        near: { 
+          type: "Point",
+          coordinates: [ lat , long]
+        },
+        distanceField: "dist.calculated",
+        maxDistance,
+        spherical: true
+     }
+   }, 
+   {
+      $limit: limit,
+   }
+  ]);
+
+    return vehicles;
+  }
 }

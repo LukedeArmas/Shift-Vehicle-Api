@@ -12,7 +12,7 @@ export class ShiftRepo {
     return this.Shift.find({}).lean();
   }
 
-  public async create (data: IShift): Promise<IShift> {
+  public async create (data: Partial<IShift>): Promise<IShift> {
     return this.Shift.create(data);
   }
 

@@ -1,7 +1,7 @@
 import autoBind from 'auto-bind';
 import type { ShiftService } from "./ShiftService"
 import { Request, Response, NextFunction } from "express";
-import { createShiftSchema } from './schemas';
+import { createShiftSchema, autoCreateShiftSchema } from './schemas';
 import CustomError from '../../utils/CustomError';
 import * as utils from '../../utils/utils';
 
@@ -125,6 +125,30 @@ export class ShiftCtrl {
       const result = await shiftService.checkAllBatterySwapsCompletedInShift(id);
 
       res.status(200).json({ result });
+    })()
+    .catch(next);
+  }
+
+  public autoCreation (req: Request, res: Response, next: NextFunction) {
+    const { shiftService } = this;
+    const { shiftData } = req.body;
+
+    if (!shiftData) {
+      return next(new Error('shiftData does not exist'));
+    }
+
+    const {error} = autoCreateShiftSchema.validate(shiftData, {convert:false});
+    
+    if (error) {
+      // Convert joi error message string to be more readable
+        const message = utils.convertJoiErrorMessage(error);
+        // CustomError allows us to include a status
+        throw new CustomError(400, message)
+    }
+
+    (async () => {
+      const createdShift = await shiftService.autoCreation(shiftData);
+      res.status(201).json({ success: true, data: createdShift });
     })()
     .catch(next);
   }

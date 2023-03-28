@@ -7,6 +7,7 @@ export class VehicleService {
   public findAll: () => Promise<IVehicle[]>;
   public findById: (shiftId: string) => Promise<IVehicle>;
   public findByIds: (vehicleIds: string[]) => Promise<IVehicle[]>;
+  public getClosestVehiclesToPoint: (lat: number, long: number, options: { maxDistance?: number, limit?: number }) => Promise<any>;
 
   constructor(
     private vehicleRepo: VehicleRepo,
@@ -15,6 +16,7 @@ export class VehicleService {
     this.findAll = vehicleRepo.findAll;
     this.findByIds = vehicleRepo.findByIds;
     this.findById = vehicleRepo.findById;
+    this.getClosestVehiclesToPoint = vehicleRepo.getClosestVehiclesToPoint;
   }
 
   public async swapBattery(vehicleId: string, newBatteryLevel: number) {

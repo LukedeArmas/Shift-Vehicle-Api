@@ -9,3 +9,11 @@ export const createShiftSchema = Joi.object({
         start_time: Joi.string().isoDate().required(),
         end_time: Joi.string().isoDate().required(),
     }).required()
+
+export const autoCreateShiftSchema = Joi.object({
+        employeeId: Joi.string().required(),
+        lat: Joi.number().required(),
+        long: Joi.number().required(),
+        start_time: Joi.string().isoDate().required(),
+        end_time: Joi.string().isoDate().required(),
+    }).required()
