@@ -41,7 +41,8 @@ const shiftSchema = new Schema({
     end_time: {
       type: Date,
       required: true,
-    }
+    },
+    // Ideally have a timezone enum here
 },
 {
     timestamps: true

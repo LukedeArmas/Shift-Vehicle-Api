@@ -14,4 +14,11 @@ export class ShiftRepo {
 
     return shifts;
   }
+
+  public async create (shiftData: IShift): Promise<IShift> {
+    const { Shift } = this;
+    const createdShift = await Shift.create(shiftData);
+
+    return createdShift;
+  }
 }

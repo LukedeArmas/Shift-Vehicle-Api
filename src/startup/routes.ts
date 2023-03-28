@@ -13,4 +13,5 @@ export default function configure(app: Express, injector: IDIContainer) {
 
   // shift routes
   app.get(`/api/shifts`, shiftCtrl.findAll);
+  app.post(`/api/shifts`, shiftCtrl.create);
 }
