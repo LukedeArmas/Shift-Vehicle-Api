@@ -36,7 +36,7 @@ export class ShiftCtrl {
       // Convert joi error message string to be more readable
         const message = utils.convertJoiErrorMessage(error);
         // CustomError allows us to include a status
-        throw new CustomError(400, message)
+        return next(new CustomError(400, message));
     }
 
     (async () => {
