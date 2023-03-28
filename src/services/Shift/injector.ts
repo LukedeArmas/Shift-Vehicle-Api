@@ -14,6 +14,7 @@ export const register = (injector: DIContainer) => {
     ),
     [types.ShiftService]: object(ShiftService).construct(
       use(types.ShiftRepo),
+      use(types.VehicleService),
     ),
     [types.ShiftCtrl]: object(ShiftCtrl).construct(
       use(types.ShiftService),

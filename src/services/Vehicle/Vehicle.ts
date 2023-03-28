@@ -1,14 +1,17 @@
 import {Schema, model, Document, Model } from 'mongoose';
 import type { ObjectId } from 'mongodb';
-import { enumArray as vehicleModelEnumArray } from '../../enums/vehicleModel';
+import { enumArray as vehicleModelEnumArray, VehicleModel } from '../../enums/vehicleModel';
 
 
 export interface IVehicle extends Document {
     _id: string | ObjectId;
-    username: string;
+    license_plate: string;
     battery_level: number;
+    recent_battery_swap_time?: string | Date;
     in_use: boolean;
-    model: string;
+    model: VehicleModel;
+    lat: Number;
+    long: Number;
 }
 
 export type IMongooseVehicleModel = Model<IVehicle>;
@@ -23,6 +26,10 @@ const vehicleSchema = new Schema({
         required: true,
         default: 0,
     },
+    recent_battery_swap_time: {
+        type: Date,
+        required: false,
+    },
     in_use: {
         type: Boolean,
         required: true,
@@ -31,6 +38,14 @@ const vehicleSchema = new Schema({
         type: String,
         required: true,
         enum: vehicleModelEnumArray,
+    },
+    lat: {
+        type: Number,
+        required: true,
+    },
+    long: {
+        type: Number,
+        required: true,
     },
 },
 {

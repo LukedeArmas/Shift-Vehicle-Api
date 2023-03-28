@@ -45,4 +45,87 @@ export class ShiftCtrl {
     })()
     .catch(next);
   }
+
+  public addVehiclesToShift (req: Request, res: Response, next: NextFunction) {
+    const { shiftService } = this;
+    const { id } = req.params;
+    const { vehicles } = req.body;
+
+    if (!id || !vehicles) {
+      return next(new CustomError(400, 'Must include shift id and vehicles'));
+    }
+
+    (async () => {
+      const shift = await shiftService.findById(id);
+      if (!shift) {
+        throw new CustomError(404, 'Shift not found');
+      }
+
+      const updatedShift = await shiftService.addVehiclesToShift(id, vehicles);
+
+      res.status(200).json({ success: true, data: updatedShift });
+    })()
+    .catch(next);
+  }
+
+  public findVehiclesForShift (req: Request, res: Response, next: NextFunction) {
+    const { shiftService } = this;
+    const { id } = req.params;
+
+    if (!id) {
+      return next(new CustomError(400, 'Must include shift id'));
+    }
+
+    (async () => {
+      const shift = await shiftService.findById(id);
+      if (!shift) {
+        throw new CustomError(404, 'Shift not found');
+      }
+
+      res.status(200).json({ success: true, data: shift?.vehicles });
+    })()
+    .catch(next);
+  }
+
+  public checkOneBatterySwapCompletedInShift (req: Request, res: Response, next: NextFunction) {
+    const { shiftService } = this;
+    const { id } = req.params;
+
+    if (!id) {
+      return next(new CustomError(400, 'Must include shift id'));
+    }
+
+    (async () => {
+      const shift = await shiftService.findById(id);
+      if (!shift) {
+        throw new CustomError(404, 'Shift not found');
+      }
+
+      const result = await shiftService.checkOneBatterySwapCompletedInShift(id);
+
+      res.status(200).json({ result });
+    })()
+    .catch(next);
+  }
+
+  public checkAllBatterySwapsCompletedInShift (req: Request, res: Response, next: NextFunction) {
+    const { shiftService } = this;
+    const { id } = req.params;
+
+    if (!id) {
+      return next(new CustomError(400, 'Must include shift id'));
+    }
+
+    (async () => {
+      const shift = await shiftService.findById(id);
+      if (!shift) {
+        throw new CustomError(404, 'Shift not found');
+      }
+
+      const result = await shiftService.checkAllBatterySwapsCompletedInShift(id);
+
+      res.status(200).json({ result });
+    })()
+    .catch(next);
+  }
 }
